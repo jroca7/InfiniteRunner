@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 
 {
     bool alive = true;
 
+    public Button botonSubmit;
+    public InputField inputName;
 
     public float speed = 5;
     [SerializeField] Rigidbody rb;
@@ -37,11 +40,13 @@ public class PlayerMovement : MonoBehaviour
     public void Die()
     {
         alive = false;
+        botonSubmit.gameObject.SetActive(true);
+        inputName.gameObject.SetActive(true);
 
-        Invoke("Restart", 1);
+        //Invoke("Restart", 1);
     }
 
-    void Restart ()
+    public void Restart ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
