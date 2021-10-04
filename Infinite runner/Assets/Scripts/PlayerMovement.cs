@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Button botonSubmit;
     public InputField inputName;
+    public Button botonGetScore;
+    public Button botonMostrarRanking;
 
     public float speed = 5;
     [SerializeField] Rigidbody rb;
@@ -42,7 +44,9 @@ public class PlayerMovement : MonoBehaviour
         alive = false;
         botonSubmit.gameObject.SetActive(true);
         inputName.gameObject.SetActive(true);
-
+        botonGetScore.gameObject.SetActive(true);
+        botonMostrarRanking.gameObject.SetActive(true);
+        
         //Invoke("Restart", 1);
     }
 
